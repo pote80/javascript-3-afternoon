@@ -30,7 +30,17 @@
 */
 
 //Code Here
-
+class Employee {
+  constructor(first_name, last_name, email, age) {
+    this.first_name = first_name,
+      this.last_name = last_name,
+      this.email = email,
+      this.age = age
+  }
+  makeWidget() {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -50,7 +60,24 @@
 */
 
 //Code Here
-
+class Manager {
+  constructor(first_name, last_name, email, age) {
+    this.first_name = first_name,
+      this.last_name = last_name,
+      this.email = email,
+      this.age = age,
+      this.reports = []
+  }
+  makeWidget() {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+  hire(employee) {
+    this.reports.push(employee)
+  }
+  fire(index) {
+    this.reports.splice(index, 1)
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -76,7 +103,40 @@
 */
 
 //Code Here
-
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age) {
+    this.first_name = first_name,
+      this.last_name = last_name,
+      this.email = email,
+      this.age = age,
+      this.reports = [],
+      this.title = "Not a manager",
+      this.bonus = 0
+  }
+  makeWidget() {
+    return this.first_name + " " + this.last_name + " Widget"
+  }
+  hire(employee) {
+    this.reports.push(employee)
+    this.updateTitle()
+  }
+  fire(index) {
+    this.reports.splice(index, 1)
+    this.bonus += 100
+    this.updateTitle()
+  }
+  updateTitle() {
+    switch (true) {
+      case this.reports.length == 0: this.title = "Not a manager"; break;
+      case this.reports.length < 4: this.title = "Barely Manager"; break;
+      case this.reports.length < 11: this.title = "Mostly Manager"; break;
+      case this.reports.length < 51: this.title = "Manager"; break;
+      case this.reports.length < 101: this.title = "Manager Plus"; break;
+      case this.reports.length >= 101: this.title = "Bestest Manager"; break;
+      default: this.title="Bestest Manager"
+    }
+  }
+}
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
@@ -103,5 +163,4 @@
 */
 
 //Code Here
-
 

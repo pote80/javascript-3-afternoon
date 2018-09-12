@@ -41,6 +41,11 @@
 
 function showValues( obj ) {
   //Code Here
+  var string = "";
+  for(key in obj){
+    string += obj[key];
+  } 
+  return string;
 }
 
 
@@ -54,9 +59,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
-
+var greaterThan10 = (obj)=>{
+  for(key in obj){
+    if(obj[key]>10){
+      obj[key]=0
+    }
+  }
+  return obj
+}
 ////////// PROBLEM 3 //////////
 
 /*
@@ -66,9 +76,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
-
+var double = (obj) =>{
+  for(key in obj){
+   obj[key]=obj[key]*2
+  }
+  return obj
+}
 ////////// PROBLEM 4 //////////
 
 /*
@@ -80,9 +93,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
-
+var secrets = (obj)=>{
+  var string=""
+  for(key in obj){
+    if(key.startsWith("sh")){
+      string +=obj[key]
+    }
+  }
+  return string;
+}
 /* 
   Sometimes it's needed to delete object properties. 
   All you need is the word delete before a reference to the object property value. 
@@ -111,9 +130,10 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
-
+var removePassword = (obj) =>{
+  delete obj.password
+  return obj;
+}
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -130,9 +150,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
-
-
+for(key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key]>100){
+    delete deleteTheBigNumbers[key]
+  }
+}
 ////////// PROBLEM 7 //////////
 
 /*
