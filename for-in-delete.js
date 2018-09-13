@@ -165,9 +165,14 @@ for(key in deleteTheBigNumbers){
 */
 
 //Code Here
-
-
-
+var startsWithK = (obj) =>{
+  for(key in obj){
+    if(key.startsWith("k")){
+      delete obj[key]
+    }
+  }
+  return obj;
+}
 ////////// PROBLEM 8 //////////
 
 /*
